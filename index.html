@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Salones - Concurso Fermat</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; max-width: 600px; margin: auto; }
+        h2 { color: #682444; } /* Color guinda */
+        input { width: 100%; padding: 12px; font-size: 16px; margin-bottom: 20px; border: 2px solid #ccc; border-radius: 5px;}
+        table { width: 100%; border-collapse: collapse; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background-color: #682444; color: white; }
+        tr:hover { background-color: #f5f5f5; }
+    </style>
+</head>
+<body>
+    <h2>Encuentra tu Salón</h2>
+    <input type="text" id="buscador" onkeyup="filtrarTabla()" placeholder="Escribe tu nombre o apellidos...">
+    
+    <table id="tablaConcursantes">
+        <tr>
+            <th>Nombre del Concursante</th>
+            <th>Salón</th>
+        </tr>
+        <tr><td>ALEJANDRO SÁNCHEZ MELÉNDEZ</td><td>Z-201</td></tr>
+        <tr><td>ALEJANDRO CUÉLLAR MELÉNDEZ</td><td>Z-201</td></tr>
+        <tr><td>ALEXA SOFÍA PARRALES GARCÍA</td><td>Z-201</td></tr>
+        <tr><td>ALEXIS GABRIEL PEREZ CORTES</td><td>Z-201</td></tr>
+        <tr><td>ÁNGEL DAMIAN LUCERO ESCOBAR</td><td>Z-201</td></tr>
+        <tr><td>ANDRÉS NICOLAS RODRÍGUEZ BARAJAS</td><td>Z-201</td></tr>
+        <tr><td>BRISA ABIGAIL GARCIA GONZALEZ</td><td>Z-201</td></tr>
+        <tr><td>CAMILA GUADALUPE PANIAGUA ANZALDO</td><td>Z-201</td></tr>
+        <tr><td>CAMILA NOEMI FONSECA SÁNCHEZ</td><td>Z-201</td></tr>
+        <tr><td>CARLOS ALESSANDRO CUEVAS GARCÍA</td><td>Z-201</td></tr>
+        <tr><td>CARLOS ALEXANDER PALACIOS FRAIRE</td><td>Z-201</td></tr>
+        <tr><td>CITLALLI GARCÍA MARTÍNEZ</td><td>Z-201</td></tr>
+        <tr><td>CRUZ EMILIANO JAIME PADILLA</td><td>Z-201</td></tr>
+        <tr><td>DABETT ITZAE BASTIDA QUINTANAR</td><td>Z-201</td></tr>
+        <tr><td>DAMIAN MODESTO GUZMÁN</td><td>Z-201</td></tr>
+        <tr><td>DARIO ISRAEL ARROYO CRUZ</td><td>Z-201</td></tr>
+        <tr><td>DEREK BAGRIEL MARTÍNEZ MARTÍNEZ</td><td>Z-201</td></tr>
+        <tr><td>DIEGO TEZMOL CORONA</td><td>Z-201</td></tr>
+        <tr><td>DIEGO MIGUEL MAURICIO MEJIA</td><td>Z-201</td></tr>
+        <tr><td>DIEGO SAMUEL HIDALGO ROMERO</td><td>Z-201</td></tr>
+        <tr><td>EDMUNDO ORTEGA POPOCA</td><td>Z-201</td></tr>
+        <tr><td>ELIZABETH AGUILAR LÓPEZ</td><td>Z-201</td></tr>
+        <tr><td>EMILY YAMILE MORALES ARREOLA</td><td>Z-201</td></tr>
+        <tr><td>ERICK GUADALUPE PEREZ HERNANDEZ</td><td>Z-201</td></tr>
+        <tr><td>FERNANDA METZIN BASILIO CARMONA</td><td>Z-201</td></tr>
+        <tr><td>GAEL EMILIANO MARTINEZ MONTOYA</td><td>Z-202</td></tr>
+        <tr><td>GERARDO LÓPEZ MOCTEZUMA</td><td>Z-202</td></tr>
+        <tr><td>GONZALO GATICA MORALES</td><td>Z-202</td></tr>
+        <tr><td>HIRAM LOEZA AGUILAR</td><td>Z-202</td></tr>
+        <tr><td>IKER MEDINA ORTEGA</td><td>Z-202</td></tr>
+        <tr><td>ILEANA XIMENA SALDIVAR ORTIZ</td><td>Z-202</td></tr>
+        <tr><td>JARED ALEJANDRO MOGUEL MALDONADO</td><td>Z-202</td></tr>
+        <tr><td>JAVIER ALEJANDRO NAVARRETE DE LA ROSA</td><td>Z-202</td></tr>
+        <tr><td>JESUS ADRIAN MENDOZA GONZALEZ</td><td>Z-202</td></tr>
+        <tr><td>JESÚS ENRIQUE MARTINEZ RAMOS</td><td>Z-202</td></tr>
+        <tr><td>JESÚS MICHELLE MONROY TOVAR</td><td>Z-202</td></tr>
+        <tr><td>JENNIFER KARELY PINEDA NIÑO</td><td>Z-202</td></tr>
+        <tr><td>JONATHAN MEJIA MEJIA</td><td>Z-202</td></tr>
+        <tr><td>JOSÉ MANUEL VILLANUEVA LÓPEZ</td><td>Z-202</td></tr>
+        <tr><td>JUAN PABLO FLORES DELGADO</td><td>Z-202</td></tr>
+        <tr><td>KAMILA GISSELL DE LA TORRE LÓPEZ</td><td>Z-202</td></tr>
+        <tr><td>LEILANI HERRERA MORALES</td><td>Z-202</td></tr>
+        <tr><td>LEON RODARTE VAZQUEZ</td><td>Z-202</td></tr>
+        <tr><td>LEONARDO MARTINEZ ROSAS</td><td>Z-203</td></tr>
+        <tr><td>LIA VASTI ARTEAGA MURILLO</td><td>Z-203</td></tr>
+        <tr><td>LIAM ANTUAN VILLARREAL LUNA</td><td>Z-203</td></tr>
+        <tr><td>LUCCA EMMANUEL SESEÑA SANDOVAL</td><td>Z-203</td></tr>
+        <tr><td>LUIS MARIO PÉREZ CRUZ</td><td>Z-203</td></tr>
+        <tr><td>LUZ CELESTE SÁNCHEZ MEDINA</td><td>Z-203</td></tr>
+        <tr><td>MATEO GUTIERREZ PIÑA</td><td>Z-203</td></tr>
+        <tr><td>MAURICIO LÓPEZ SÁNCHEZ</td><td>Z-203</td></tr>
+        <tr><td>MAXIMILIANO CASTELLANOS MARTÍNEZ</td><td>Z-203</td></tr>
+        <tr><td>MIGUEL ÁNGEL ISLAS SALAS</td><td>Z-203</td></tr>
+        <tr><td>NATALIA PEREZ NOVOA</td><td>Z-203</td></tr>
+        <tr><td>NATALIA SÁNCHEZ GARCÍA</td><td>Z-203</td></tr>
+        <tr><td>NAYELI VALENTINA ORTIZ CORDERO</td><td>Z-203</td></tr>
+        <tr><td>NICOLÁS BRISEÑO CERVANTES</td><td>Z-203</td></tr>
+        <tr><td>VÍCTOR EMANUEL LANDERO GARZON</td><td>Z-203</td></tr>
+        <tr><td>ABEL GERARDO DE LEON LOPEZ</td><td>Z-204</td></tr>
+        <tr><td>ADRIANA LIZETH MARQUEZ VIVEROS</td><td>Z-204</td></tr>
+        <tr><td>AIME CAMILA GONZALEZ TORRES</td><td>Z-204</td></tr>
+        <tr><td>AITANA ISABELLA BARCENAS TOLEDO</td><td>Z-204</td></tr>
+        <tr><td>ALAN PINEDA URBINA</td><td>Z-204</td></tr>
+        <tr><td>ALEXIS RAUL VILLAGRAN NANBOS</td><td>Z-204</td></tr>
+        <tr><td>ALFREDO JIMENEZ GUTIERREZ</td><td>Z-204</td></tr>
+        <tr><td>ALISSON ADAME PAREDES</td><td>Z-204</td></tr>
+        <tr><td>ALY LARA OROZCO</td><td>Z-204</td></tr>
+        <tr><td>AMERICA VALENTIN HERNANDEZ</td><td>Z-204</td></tr>
+        <tr><td>ANA XIMENA LÓPEZ ZAMORA</td><td>Z-204</td></tr>
+        <tr><td>ANA YARET BASILIO LARA</td><td>Z-204</td></tr>
+        <tr><td>ARMANDO EMILIANO PERALTA MORALES</td><td>Z-204</td></tr>
+        <tr><td>BENITO ANTUÑANO IDARGO</td><td>Z-204</td></tr>
+        <tr><td>BENITO ISAIS TORRES CORTEZ</td><td>Z-204</td></tr>
+        <tr><td>BRUNO SEBASTIAN DUARTE MUÑOZ</td><td>Z-204</td></tr>
+        <tr><td>CAMILA MUÑOZ CORTÉS</td><td>Z-204</td></tr>
+        <tr><td>CAMILA SOLANO CASTAÑEDA</td><td>Z-204</td></tr>
+        <tr><td>CARLOS ANDRES COLQUI GARCIA</td><td>Z-204</td></tr>
+        <tr><td>CARLOS VLADIMIR CAMPOS LÓPEZ</td><td>Z-204</td></tr>
+        <tr><td>CAROLINA MONSERRAT CABALLERO LOPEZ</td><td>Z-204</td></tr>
+        <tr><td>CHRISTOPHER EMILIANO MARTINEZ DIAZ</td><td>Z-204</td></tr>
+        <tr><td>CRISTOFER DEMIAN RAMOS GARCIA</td><td>Z-204</td></tr>
+        <tr><td>DANIEL DÍAZ ORTIZ ORTIZ</td><td>Z-204</td></tr>
+        <tr><td>DANIEL ALEJANDRO CARRANCO CORTINA</td><td>Z-204</td></tr>
+        <tr><td>DANTE DANIEL GONZALEZ TORRES</td><td>Z-204</td></tr>
+        <tr><td>DANTE SAMIR MACÍAS ORENDAY</td><td>Z-205</td></tr>
+        <tr><td>DEREK RUBÍN VALDEZ LUNA</td><td>Z-205</td></tr>
+        <tr><td>DIANA MORALES LOPEZ</td><td>Z-205</td></tr>
+        <tr><td>DIANA LIZETH AVILA MARTINEZ</td><td>Z-205</td></tr>
+        <tr><td>DIEGO GONZALEZ GARCIA</td><td>Z-205</td></tr>
+        <tr><td>DIERIK NICOLAS ESTEVA LOPEZ</td><td>Z-205</td></tr>
+        <tr><td>DULCE IVETTE CONTRERAS GARCIA</td><td>Z-205</td></tr>
+        <tr><td>DULCE VICTORIA ORTEGA DE LA CRUZ</td><td>Z-205</td></tr>
+        <tr><td>EDUARDO MORALES VELÁZQUEZ</td><td>Z-205</td></tr>
+        <tr><td>EDUARDO ARROYO LAUREANO</td><td>Z-205</td></tr>
+        <tr><td>ELIEEL VAZQUEZ ARCE</td><td>Z-205</td></tr>
+        <tr><td>EMILIANO SÁNCHEZ LÓPEZ</td><td>Z-205</td></tr>
+        <tr><td>ERNESTO ÁLVAREZ HERNÁNDEZ</td><td>Z-205</td></tr>
+        <tr><td>FERNANDO BARRON SOLIS</td><td>Z-205</td></tr>
+        <tr><td>GERALDINE VICTORIA MENDOZA MONROY</td><td>Z-205</td></tr>
+        <tr><td>GERARDO SÁNCHEZ JIMÉNEZ</td><td>Z-205</td></tr>
+        <tr><td>GLADYS MARTÍNEZ RODRÍGUEZ</td><td>Z-205</td></tr>
+        <tr><td>GONZALO VÁZQUEZ PÉREZ</td><td>Z-205</td></tr>
+        <tr><td>GUSTAVO RIVERA RODRIGUEZ</td><td>Z-205</td></tr>
+        <tr><td>HEIDI YARETZI LOPEZ SAAVEDRA</td><td>Z-205</td></tr>
+        <tr><td>HERACLIO CABRERA CABRERA</td><td>Z-205</td></tr>
+        <tr><td>IAN ELIAS NAVA ROQUE</td><td>Z-205</td></tr>
+        <tr><td>IAN KARIM GARCIA MALDONADO</td><td>Z-205</td></tr>
+        <tr><td>ISAÍAS RAFAEL LÓPEZ TERRONES</td><td>Z-205</td></tr>
+        <tr><td>ISRAEL MICHEL PICAZO ROJO</td><td>Z-205</td></tr>
+        <tr><td>JAIR PATATUCHI MARIANO</td><td>Z-205</td></tr>
+        <tr><td>JAZMIN CARBAJAL SALMERON</td><td>Z-206</td></tr>
+        <tr><td>JENNIFER MICHELLE TOVAR HERNÁNDEZ</td><td>Z-206</td></tr>
+        <tr><td>JESÚS ANTONIO RAMIRO ROSALES</td><td>Z-206</td></tr>
+        <tr><td>JOEL DAVID SEGURA RAMOS</td><td>Z-206</td></tr>
+        <tr><td>JOSÉ ANTONIO SALAZAR PAZ</td><td>Z-206</td></tr>
+        <tr><td>JOSÉ ENRIQUE HERNÁNDEZ DÍAZ</td><td>Z-206</td></tr>
+        <tr><td>JOSE JUAN GONZÁLEZ JIMÉNEZ</td><td>Z-206</td></tr>
+        <tr><td>JOSÉ LEONARDO ROQUE BAUTISTA</td><td>Z-206</td></tr>
+        <tr><td>JUAN CARLOS SÁNCHEZ GARCÍA</td><td>Z-206</td></tr>
+        <tr><td>JUAN EDGARDO LOPEZ GARCIA</td><td>Z-206</td></tr>
+        <tr><td>KEILA BERENICE BRIONES IGNACIO</td><td>Z-206</td></tr>
+        <tr><td>KEVIN PASTENES RODRÍGUEZ</td><td>Z-206</td></tr>
+        <tr><td>LEONARDO VELAZQUEZ MARTINEZ</td><td>Z-206</td></tr>
+        <tr><td>LEONARDO DÍAZ DELGADO</td><td>Z-206</td></tr>
+        <tr><td>LILIANA TRUJILLO ALVA</td><td>Z-206</td></tr>
+        <tr><td>LUIS FERNANDO SOSA ANAYA</td><td>Z-206</td></tr>
+        <tr><td>LUIS GERARDO GARCÍA CIENEGA</td><td>Z-206</td></tr>
+        <tr><td>LUZ ESTRELLA SÁNCHEZ MEDINA</td><td>Z-206</td></tr>
+        <tr><td>MAGALI TOCHIHUITL GARCÍA</td><td>Z-206</td></tr>
+        <tr><td>MARCO ANTONIO REBOLLAR RAMOS</td><td>Z-206</td></tr>
+        <tr><td>MARÍA DEL ROSARIO GUTIÉRREZ ALMANZA</td><td>Z-206</td></tr>
+        <tr><td>MARÍA FERNANDA JIMÉNEZ VAZQUEZ</td><td>Z-206</td></tr>
+        <tr><td>MARIA GUADALUPE RAMÍREZ LUGO</td><td>Z-206</td></tr>
+        <tr><td>MERCEDES ESMERALDA BALTAZAR COLIN</td><td>Z-206</td></tr>
+        <tr><td>MOISÉS GONZÁLEZ ROMERO</td><td>Z-206</td></tr>
+        <tr><td>MONSERRAT VENTURA SALAZAR</td><td>Z-206</td></tr>
+        <tr><td>NATALIA LAGUNAS MONDRAGÓN</td><td>Z-207</td></tr>
+        <tr><td>NICOLÁS PEDRO URIBE RAMOS</td><td>Z-207</td></tr>
+        <tr><td>NOAJ LUGO MONTAÑO</td><td>Z-207</td></tr>
+        <tr><td>OSCAR HERNÁNDEZ GUTIÉRREZ</td><td>Z-207</td></tr>
+        <tr><td>PALOMA ABRAHAM CONTRERAS</td><td>Z-207</td></tr>
+        <tr><td>PEDRO ROMERO ORTEGA</td><td>Z-207</td></tr>
+        <tr><td>RAMIRO ALEJANDRO GARZA DIAZ</td><td>Z-207</td></tr>
+        <tr><td>REGINA CASTELLANOS BENITEZ</td><td>Z-207</td></tr>
+        <tr><td>REGINA VICTORIA GONZALEZ SOLANO</td><td>Z-207</td></tr>
+        <tr><td>RENATA CAMILA REYNA VILCHIS</td><td>Z-207</td></tr>
+        <tr><td>RICARDO CABRAL SANCHEZ</td><td>Z-207</td></tr>
+        <tr><td>RODRIGO HERNÁNDEZ RODAS</td><td>Z-207</td></tr>
+        <tr><td>ROXANA GONZALEZ RAMIREZ</td><td>Z-207</td></tr>
+        <tr><td>RUBEN MARTIN ARRAÑAGA ABUNDIZ</td><td>Z-207</td></tr>
+        <tr><td>SADOC GARCIA MENDEZ</td><td>Z-207</td></tr>
+        <tr><td>SAYURI COLMENARES BECERRA</td><td>Z-207</td></tr>
+        <tr><td>SOFIA ROBLES GOPAR</td><td>Z-207</td></tr>
+        <tr><td>TADEO SEBASTIÁN CAMPA MENCHACA</td><td>Z-207</td></tr>
+        <tr><td>TAMARA YAMILETH GARCIA HERNÁNDEZ</td><td>Z-207</td></tr>
+        <tr><td>VALENTINA ALCALA BARRETO</td><td>Z-207</td></tr>
+        <tr><td>VICTOR HUACHINA SANTIAGO</td><td>Z-207</td></tr>
+        <tr><td>WUANE JESÚS CORREA REYNA</td><td>Z-207</td></tr>
+        <tr><td>XIMENA GUTIERRÉZ RODRÍGUEZ</td><td>Z-207</td></tr>
+        <tr><td>YAEL ALDAVA ORTIZ</td><td>Z-207</td></tr>
+        <tr><td>YASMARA XANAT DELGADO BAUTISTA</td><td>Z-207</td></tr>
+        <tr><td>YESSENIA AGUIRRE PORTILLA</td><td>Z-207</td></tr>
+        <tr><td>YUANA VALENTINA GONZÁLEZ CRUZ</td><td>Z-207</td></tr>
+        <tr><td>ZURIEL GÓMEZ LÓPEZ</td><td>Z-207</td></tr>
+        <tr><td>ELIAS LOPEZ RIVERA</td><td>Z-208</td></tr>
+        <tr><td>EMANUEL SALADO VALENTE</td><td>Z-208</td></tr>
+        <tr><td>FIDJI ARELI PÉREZ ALEJANDRES</td><td>Z-208</td></tr>
+        <tr><td>NEFTALI ADOLFO MACEDA ESPINOSA</td><td>Z-208</td></tr>
+        <tr><td>NABOR ALEJANDRO NIETO RANGEL</td><td>Z-208</td></tr>
+        <tr><td>OSCAR OMAR CACHÚ VELÁZQUEZ</td><td>Z-208</td></tr>
+        <tr><td>SANTIAGO GONZÁLEZ SALUD</td><td>Z-208</td></tr>
+        <tr><td>SERGIO BARRAGÁN ARROYO</td><td>Z-208</td></tr>
+        <tr><td>VIKTOR CHARGOY ESPINO</td><td>Z-208</td></tr>
+
+    </table>
+
+    <script>
+        function filtrarTabla() {
+            var input = document.getElementById("buscador");
+            var filter = input.value.toUpperCase();
+            var table = document.getElementById("tablaConcursantes");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    var txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }       
+            }
+        }
+    </script>
+</body>
+</html>
